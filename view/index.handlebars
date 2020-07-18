@@ -1,0 +1,32 @@
+<h1>Burger Quest!</h1>
+<h3>The quest to devour the finest burgers of the land</h3>
+
+<h2>Burgers to Conqure!</h2>
+
+<ul>
+  {{#each burgers}}
+    {{#unless devoured}}
+      {{> burgers/burger-block devoured=true}}
+    {{/unless}}
+  {{/each}}
+</ul>
+
+<h2>Conqured Burgers!</h2>
+
+<ul>
+  {{#each burgers}}
+    {{#if devoured}}
+      {{> burgers/burger-block devoured=false}}
+    {{/if}}
+  {{/each}}
+</ul>
+
+<h2>Add To The Quest</h2>
+<form class="create-form">
+
+  <div class="form-group">
+    <label for="burg">Burger:</label>
+    <input type="text" id="burg" name="name">
+  </div>
+  <button type="submit">Add Burger</button>
+</form>
