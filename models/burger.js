@@ -2,8 +2,10 @@ var orm = require ("../config/orm")
 
 var burger = {
 
-    selectAll: () =>{
-        orm.selectAll()
+    selectAll: (cb) => {
+        orm.selectAll("burgers", res => {
+            cb(res);
+        });
     },
     
     insertOne: () =>{
