@@ -1,36 +1,72 @@
-<div class="header">
-<h1>Burger Quest!</h1>
-<h3>The quest to devour the finest burgers of the land</h3>
+<div class="header-bar">
+  <div class="header-background">
+    <div class="header">
+      <h1>Burger Quest!</h1>
+    </div>
+    <div class="header">
+      <h3>The quest to devour the finest burgers of the land</h3>
+    </div>
+  </div>
 </div>
 
-<h2>Burgers to Conqure!</h2>
+<div class="crest-box row d-flex justify-content-center">
+  <img class="crest" src="/assets/burgerquestcrest.png" alt="burger-quest-crest">
+</div>
 
-<ul>
-  {{#each burgers}}
-    {{#unless devoured}}
-      {{> burgers/burger-block devoured=true }}
-    {{/unless}}
-  {{/each}}
-</ul>
+<hr class="buffer-top">
 
-<h2>Conqured Burgers!</h2>
-
-<ul>
-  {{#each burgers}}
-    {{#if devoured}}
-    <li>
-      {{burger_name}}
-    </li>
-    {{/if}}
-  {{/each}}
-</ul>
-
-<h2>Add To The Quest</h2>
-<form class="create-form">
-
-  <div class="form-group">
-    <label for="burg">Burger:</label>
-    <input type="text" id="burg" name="burger_name">
+<div class="container list-background">
+  <div class="row head-room">
+    <div class="col-6 d-flex justify-content-center cent-text">
+      <h2>Burgers to Conqure!</h2>
+    </div>
+    <div class="col-6 d-flex justify-content-center cent-text">
+      <h2>Conqured Burgers!</h2>
+    </div>
   </div>
-  <button type="submit">Add Burger</button>
-</form>
+
+  <div class="row">
+    <div class="col-6 d-flex justify-content-center">
+      <ul>
+        {{#each burgers}}
+        {{#unless devoured}}
+        {{> burgers/burger-block devoured=true }}
+        {{/unless}}
+        {{/each}}
+      </ul>
+    </div>
+
+    <div class="col-6 d-flex justify-content-center">
+      <ul>
+        {{#each burgers}}
+        {{#if devoured}}
+        <li>
+          {{burger_name}}
+        </li>
+        {{/if}}
+        {{/each}}
+      </ul>
+    </div>
+  </div>
+</div>
+
+<hr class="buffer">
+
+<div class="row d-flex justify-content-center">
+  <div class="col-6 d-flex justify-content-center cent-text">
+    <h2>Add To The Quest</h2>
+  </div>
+</div>
+
+<div class="row d-flex justify-content-center">
+  <form class="create-form">
+
+    <div class="form-group">
+      <label for="burg">New Burger:</label>
+      <input type="text" id="burg" name="burger_name">
+    </div>
+    <div class="row d-flex justify-content-center">
+      <button type="submit">Embark</button>
+    </div>
+  </form>
+</div>
