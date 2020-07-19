@@ -1,4 +1,4 @@
-var connection = require ("../config/connection")
+var connection = require("../config/connection")
 
 const orm = {
     selectAll: (tableInput, cb) => {
@@ -8,14 +8,20 @@ const orm = {
             cb(result);
         })
     },
-    
-    insertOne: () => {
-        
+
+    insertOne: (table, cols, vals, cb) => {
+        var queryStr = `INSERT INTO ${table} (${cols.toString()}, devoured) VALUES (${vals.toString()}, ${false})`;
+        console.log(queryStr);
+
+        connection.query(queryStr, (err, result) => {
+            if (err) throw err;
+            cb(result);
+        });
     },
-    
+
     updateOne: () => {
-        
-    }   
+
+    }
 }
 
 module.exports = orm;
