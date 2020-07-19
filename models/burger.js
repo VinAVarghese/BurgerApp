@@ -14,8 +14,10 @@ var burger = {
         })
     },
     
-    updateOne: () =>{
-        orm.updateOne()
+    updateOne: (ColVals, condition, cb) =>{
+        orm.updateOne("burgers", ColVals, condition, (res) => {
+            cb(res);
+        });
     }
 }
 

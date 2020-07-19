@@ -10,18 +10,24 @@ const orm = {
     },
 
     insertOne: (table, cols, vals, cb) => {
-        var queryStr = `INSERT INTO ${table} (${cols.toString()}, devoured) VALUES (${vals.toString()}, ${false})`;
+        var queryStr = `INSERT INTO ${table} (${cols.toString()}, devoured) VALUES ("${vals.toString()}", false)`;
         console.log(queryStr);
-
         connection.query(queryStr, (err, result) => {
             if (err) throw err;
             cb(result);
         });
     },
 
-    updateOne: () => {
+    updateOne: (table, ColVals, condition, cb) => {
+        
+        var queryStr = `UPDATE ${table} SET ${ColVals} WHERE ${condition}`;
 
+        console.log(queryStr);
+        connection.query(queryStr, (err, result) => {
+            if (err) throw err;
+            cb(result)
+        });
     }
-}
+};
 
 module.exports = orm;
