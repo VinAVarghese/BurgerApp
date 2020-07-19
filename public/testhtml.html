@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Burger Quest</title>
+    <link rel="stylesheet" href="./assets/css/style.css" type="text/css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Carrois+Gothic+SC&family=Open+Sans&display=swap"
+        rel="stylesheet">
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="/assets/js/burgers.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <div class="header-bar">
+        <div class="header-background">
+            <div class="header">
+                <h1>Burger Quest!</h1>
+            </div>
+            <div class="header">
+                <h3>The quest to devour the finest burgers of the land</h3>
+            </div>
+        </div>
+    </div>
+        
+    <hr class="buffer">
+
+    <div class="container list-background">
+        <div class="row head-room">
+            <div class="col-6 d-flex justify-content-center cent-text">
+                <h2>Burgers to Conqure!</h2>
+            </div>
+            <div class="col-6 d-flex justify-content-center cent-text">
+                <h2>Conqured Burgers!</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6 d-flex justify-content-center">
+                <ul>
+                    <li>
+                        {{burger_name}}
+
+                        <button class="change-devoured" data-id="{{id}}" data-newdevoured="{{devoured}}">
+                            Devour!
+                        </button>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-6 d-flex justify-content-center">
+                <ul>
+                    <li>
+                        {{burger_name}}
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <hr class="buffer">
+
+    <div class="row d-flex justify-content-center">
+        <div class="col-6 d-flex justify-content-center cent-text">
+            <h2>Add To The Quest</h2>
+        </div>
+    </div>
+    <div class="row d-flex justify-content-center">
+        <form class="create-form">
+
+            <div class="form-group">
+                <label for="burg">New Burger:</label>
+                <input type="text" id="burg" name="burger_name">
+            </div>
+            <div class="row d-flex justify-content-center">
+                <button type="submit">Embark</button>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>
