@@ -57,6 +57,7 @@ h2{
     position: relative;
     bottom: 70px;
     width: 150px;
+    height: auto;
 }
 
 .buffer-top{
