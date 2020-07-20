@@ -55,27 +55,9 @@ h2{
 
 .crest{
     position: relative;
-    bottom: 90px;
-    width: 15%;
+    bottom: 70px;
+    width: 150px;
 }
-
-/* adjusting crest size and position on smaller viewports*/
-@media only screen and (max-device-width: 580px){
-    .crest{
-        position: relative;
-        bottom: 50px;
-        width: 30%;
-    }  
-}
-
-/* adjusting crest size and position on smaller viewports*/
-/* @media only screen and (min-device-width: 2000px){
-    .crest{
-        position: relative;
-        bottom: 50px;
-        width: 10%;
-    }  
-} */
 
 .buffer-top{
     margin-bottom: 40px;
